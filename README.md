@@ -33,3 +33,7 @@ Replace ```[app-name]``` with the desired directory name for your new applicatio
 
 * Point your virtual host document root to your new application's ```public/``` directory.
 * Ensure ```logs/``` is web writeable.
+
+## Run the aplication
+
+### Direct run
