@@ -6,13 +6,13 @@ volumes:
 
 services:
     slim:
-        container_name: shopify-app
+        container_name: slim-scafold
         restart: always
         image: danteay/php7-pgsql
         working_dir: /var/www
         command: php -S 0.0.0.0:8080 -t public index.php
         environment:
-            APPNAME: SHOPIFY
+            APPNAME: SLIM_SCAFOLD
         ports:
             - 8080:8080
         volumes:

@@ -18,6 +18,17 @@ class PingController extends BaseController
     }
 
     /**
+    * @param Request $req
+    * @param Response $res
+    * @param array $args
+    * @return Response
+    */
+    public function index(Request $req, Response $res, $args)
+    {
+        return $this->view->render($res, 'index.phtml', $args);
+    }
+
+    /**
      * @param Request $req
      * @param Response $res
      * @param array $args
