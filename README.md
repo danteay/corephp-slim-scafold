@@ -36,4 +36,20 @@ Replace ```[app-name]``` with the desired directory name for your new applicatio
 
 ## Run the aplication
 
-### Direct run
+### Direct execution
+
+```bash
+php -S 0.0.0.0:8080 -t public index.php
+```
+
+### Composer execution
+
+```bash
+composer start
+```
+
+### Docker compose
+
+```bash
+docker-compose up
+```

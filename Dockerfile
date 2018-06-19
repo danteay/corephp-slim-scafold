@@ -1,6 +1,6 @@
 FROM danteay/php7-pgsql
 
-ENV APPNAME "SHOPIFY"
+ENV APPNAME "SLIM_SCAFOLD"
 
 WORKDIR /var/www
 
