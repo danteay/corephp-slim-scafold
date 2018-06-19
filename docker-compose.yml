@@ -1,0 +1,19 @@
+version: '2'
+
+volumes:
+    logs:
+        driver: local
+
+services:
+    slim:
+        container_name: shopify-app
+        restart: always
+        image: danteay/php7-pgsql
+        working_dir: /var/www
+        command: php -S 0.0.0.0:8080 -t public index.php
+        environment:
+            APPNAME: SHOPIFY
+        ports:
+            - 8080:8080
+        volumes:
+            - .:/var/www
