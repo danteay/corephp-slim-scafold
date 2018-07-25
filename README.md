@@ -10,6 +10,8 @@ repository from [Slim Framework](https://www.slimframework.com/).
 * slim/php-view ^2.0
 * corephp/log ^0.2.1
 * doctrine/dbal ^2.7
+* PHP pgsql extension
+* PHP pdo_pgsql extension
 
 ## Namespaces
 
@@ -33,6 +35,12 @@ Replace ```[app-name]``` with the desired directory name for your new applicatio
 
 * Point your virtual host document root to your new application's ```public/``` directory.
 * Ensure ```logs/``` is web writeable.
+
+## Install project
+
+```bash
+composer install
+```
 
 ## Run the aplication
 
