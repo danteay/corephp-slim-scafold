@@ -3,11 +3,13 @@
 return function($c) {
     $config = new \Doctrine\DBAL\Configuration();
     $conn = null;
+    
+    $database = getenv('DATABASE_URL');
 
-    if (isset($_ENV['DATABASE_URL'])) {
+    if (empty($database)) {
         try {
             $params = array(
-                'url' => $_ENV['DATABASE_URL']
+                'url' => $database
             );
 
             $conn = \Doctrine\DBAL\DriverManager::getConnection($params, $config);
