@@ -1,13 +1,13 @@
-FROM danteay/php7-pgsql
+FROM webdevops/php-nginx:7.2
 
-ENV APPNAME "SLIM_SCAFOLD"
+RUN apt-install libpq-dev
+RUN docker-php-ext-install opcache pdo pdo_pgsql pgsql
 
-WORKDIR /var/www
+ENV APPNAME "SLIM"
 
-ADD . /var/www
+COPY config/site.conf /opt/docker/etc/nginx/conf.d/site.conf
+ADD . /app
 
-EXPOSE 8080
+RUN chmod -R 777 /app/public/
 
-VOLUME [ ".:/var/www" ]
-
-CMD [ "php", "-S", "0.0.0.0:8080", "-t", "public", "index.php" ]
+EXPOSE 91
