@@ -3,7 +3,7 @@
 return function ($c) {
     $settings = $c->get('settings')['logger'];
 
-    $logger = new CorePHP\Log\Logger($_ENV['APPNAME']);
+    $logger = new CorePHP\Log\Logger(getenv('APPNAME'));
     $formatter = new CorePHP\Log\Formatters\WebFormatter();
     
     $file_handler = new CorePHP\Log\Handlers\FileHandler($settings['logfile']);
