@@ -12,7 +12,7 @@ return [
 
         // Monolog settings
         'logger' => [
-            'name' => $_ENV['APPNAME'],
+            'name' => getenv('APPNAME'),
             'logfile' => __DIR__ . '/../logs/logs.log'
         ]
     ]
