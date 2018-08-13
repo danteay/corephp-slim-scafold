@@ -10,10 +10,24 @@ services:
         restart: always
         image: danteay/php7-pgsql
         working_dir: /var/www
-        command: php -S 0.0.0.0:8080 -t public index.php
+        command: php -S 0.0.0.0:8080 -t public public/index.php
         environment:
             APPNAME: SLIM_SCAFOLD
+            ERROR_DETAILS: 'true'
+            DATABASE_URL: postgres://postgres:1qaz2wsx@localhost:8081/test
         ports:
             - 8080:8080
         volumes:
             - .:/var/www
+        links:
+            - "postgres:db"
+
+    postgres:
+        image: postgres:10
+        restart: always
+        environment:
+            POSTGRES_PASSWORD: 1qaz2wsx
+            POSTGRES_USER: postgres
+            POSTGRES_DB: test
+        ports:
+            - 8081:5432

@@ -1,3 +1,3 @@
 <?php
 
-require_once __DIR__ . '/config/routes/ping.php';
+require __DIR__ . '/config/routes/ping.php';

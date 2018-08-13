@@ -1,12 +1,15 @@
 <?php
 // view renderer
-$container['renderer'] = require_once __DIR__ . '/config/dependencies/renderer.php';
+$container['renderer'] = require __DIR__ . '/config/dependencies/twig.php';
 
 // corephp-log
-$container['logger'] = require_once __DIR__ . '/config/dependencies/logger.php';
+$container['logger'] = require __DIR__ . '/config/dependencies/logger.php';
 
 // Propel
-$container['database'] = require_once __DIR__ . '/config/dependencies/database.php';
+$container['database'] = require __DIR__ . '/config/dependencies/eloquent.php';
 
 // Handler for Not found page
-$container['notFoundHandler'] = require_once __DIR__ . '/config/dependencies/error-404.php';
+$container['notFoundHandler'] = require __DIR__ . '/config/dependencies/error-404.php';
+
+// Top level error handler
+$container['errorHandler'] = require __DIR__ . '/config/dependencies/error-500.php';

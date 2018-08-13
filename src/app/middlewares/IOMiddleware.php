@@ -35,9 +35,11 @@ class IOMiddleware
         $endtime = microtime(true);
         $time = $endtime - $starttime;
 
+        $length = empty($data) ? 0 : strlen($request->getBody());
+
         $context = [
             'code' => $response->getStatusCode(),
-            'bodyLength' => sizeof($request->getBody()),
+            'bodyLength' => $length,
             'reqTime' => "{$time}s",
             'level' => 'REQUEST'
         ];

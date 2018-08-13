@@ -5,6 +5,7 @@ namespace Controllers;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use Base\BaseController;
+use Illuminate\Database\Eloquent\Model;
 
 class PingController extends BaseController
 {
@@ -25,7 +26,7 @@ class PingController extends BaseController
     */
     public function index(Request $req, Response $res, $args)
     {
-        return $this->view->render($res, 'index.phtml', $args);
+        return $this->view->render($res, 'index.twig', $args);
     }
 
     /**

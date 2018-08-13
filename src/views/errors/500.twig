@@ -1,0 +1,21 @@
+{% extends 'layouts/errors.twig' %}
+
+{% block title %}Internal Server Error{% endblock %}
+
+{% block errorCode %}500{% endblock %}
+
+{% block titleError %}An Unexpected error apear, plase return and try again...{% endblock %}
+
+{% block message %}
+    {{ message }}
+{% endblock %}
+
+{% block trace %}
+    {% if showTrace %}
+        {% embed 'sections/errors/trace.twig' %}
+            {% block traceMessage %}
+                {{ trace }}
+            {% endblock %}
+        {% endembed %}
+    {% endif %}
+{% endblock %}
