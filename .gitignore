@@ -2,3 +2,5 @@
 /logs/*
 !/logs/README.md
 .idea/
+vscode/
+src/views/cache/*
