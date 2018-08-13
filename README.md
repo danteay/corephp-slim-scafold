@@ -7,9 +7,9 @@ repository from [Slim Framework](https://www.slimframework.com/).
 
 * php >= 5.5.0
 * slim/slim ^3.1
-* slim/php-view ^2.0
+* slim/twig-view ^2.4
 * corephp/log ^0.2.1
-* doctrine/dbal ^2.7
+* illuminate/database ^5.6
 * PHP pgsql extension
 * PHP pdo_pgsql extension
 
