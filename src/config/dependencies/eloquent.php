@@ -2,6 +2,7 @@
 
 /**
  * Parse database URL into a valid Eloquent configuration
+ *
  * @param string $url
  * @return void
  */
