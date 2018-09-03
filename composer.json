@@ -2,7 +2,7 @@
     "name": "corephp/slim-scafold",
     "description": "A Slim Framework skeleton application for rapid development",
     "keywords": ["microframework", "rest", "router", "psr7"],
-    "homepage": "http://github.com/danteay/slim-scafold",
+    "homepage": "http://github.com/danteay/corephp-slim-scafold",
     "license": "MIT",
     "authors": [
         {
