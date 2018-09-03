@@ -27,26 +27,19 @@ class IOMiddleware
      */
     public function __invoke(Request $request, Response $response, $next)
     {
-        $data = json_encode($request->getParsedBody());
-        $data = empty($data) ? '' : $data;
-
-        $starttime = microtime(true);
         $response = $next($request, $response);
-        $endtime = microtime(true);
-        $time = $endtime - $starttime;
 
-        $length = empty($data) ? 0 : strlen($request->getBody());
+        $code = $response->getStatusCode();
 
         $context = [
-            'code' => $response->getStatusCode(),
-            'bodyLength' => $length,
-            'reqTime' => "{$time}s",
-            'level' => 'REQUEST'
+            'method' => $request->getMethod(),
+            'body' => $request->getParsedBody(),
+            'headers' => $request->getHeaders()
         ];
 
-        if ($context['code'] >= 200 && $context['code'] <= 202) {
+        if ($code >= 200 && $code <= 202) {
             $this->logger->info($data, $context);
-        } elseif ($context['code'] >= 203 && $context['code'] < 400) {
+        } else if ($code >= 203 && $code<= 400) {
             $this->logger->warning($data, $context);
         } else {
             $this->logger->error($data, $context);

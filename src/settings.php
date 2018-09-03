@@ -18,7 +18,9 @@ return [
         // Monolog settings
         'logger' => [
             'name' => getenv('APPNAME'),
-            'logfile' => __DIR__ . '/../logs/logs.log'
+            'level' => Monolog\Logger::DEBUG,
+            #'path' => __DIR__ . '/../logs/logs.log'
+            'path' => 'php://stdout'
         ]
     ]
 ];

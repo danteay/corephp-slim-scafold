@@ -47,6 +47,8 @@ class PingController extends BaseController
             "data" => "pong"
         ];
 
+        $this->logger->info('Esto es un mensaje');
+
         return $res->withJson($resp, 200);
     }
 }

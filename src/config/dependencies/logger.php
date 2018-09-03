@@ -2,20 +2,8 @@
 
 return function ($c) {
     $settings = $c->get('settings')['logger'];
-
-    $logger = new CorePHP\Log\Logger(getenv('APPNAME'));
-    $formatter = new CorePHP\Log\Formatters\WebFormatter();
-    
-    $file_handler = new CorePHP\Log\Handlers\FileHandler($settings['logfile']);
-    $stdo_handler = new CorePHP\Log\Handlers\StdoutHandler(true);
-
-    $file_handler->setFormatt($formatter);
-    $stdo_handler->setFormatt($formatter);
-
-    $logger->addHandler($file_handler);
-    $logger->addHandler($stdo_handler);
-
-    $GLOBALS['logger'] = $logger;
-
+    $logger = new Monolog\Logger(strtoupper($settings['name']));
+    $logger->pushProcessor(new Monolog\Processor\UidProcessor());
+    $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
     return $logger;
 };
