@@ -5,6 +5,7 @@ FROM webdevops/php-nginx:7.2
 ###################################################################
 
 ENV SRC /app
+ENV PORT 8080
 
 RUN apt-install libpq-dev
 RUN docker-php-ext-install opcache pdo pdo_pgsql pgsql
@@ -15,7 +16,6 @@ RUN docker-php-ext-install opcache pdo pdo_pgsql pgsql
 
 ENV APPNAME "slim-scafold"
 ENV ERROR_DETAILS "true"
-ENV PORT 8080
 
 # A valid URL format of your database
 #
@@ -36,6 +36,9 @@ COPY config/site.conf /opt/docker/etc/nginx/conf.d/site.conf
 ###################################################################
 
 ADD . ${SRC}
+
+WORKDIR ${SRC}
+RUN composer install
 
 RUN chmod -R 777 ${SRC}/public/
 RUN chmod -R 777 ${SRC}

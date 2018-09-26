@@ -1,0 +1,16 @@
+{
+    "definitions": {
+        "createUser": {
+            "type": "object",
+            "required": [
+                "email"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$"
+                }
+            }
+        }
+    }
+}
