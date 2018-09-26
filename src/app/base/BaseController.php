@@ -3,6 +3,7 @@
 namespace Base;
 
 use Interop\Container\ContainerInterface;
+use Helpers\ExceptionsHelper;
 
 class BaseController
 {
@@ -40,6 +41,8 @@ class BaseController
      * @var \Illuminate\Database\Capsule\Manager
      */
     protected $db;
+
+    use ExceptionsHelper;
 
     /**
      * BaseHandler constructor.

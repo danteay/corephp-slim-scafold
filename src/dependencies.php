@@ -1,13 +1,12 @@
 <?php
 
-// Dependencie modules
+define('DEPENDENCIESDIR', __DIR__ . '/config/dependencies');
 
-$container['renderer']           = require __DIR__ . '/config/dependencies/twig.php';
-$container['logger']             = require __DIR__ . '/config/dependencies/logger.php';
-$container['database']           = require __DIR__ . '/config/dependencies/eloquent.php';
-$container['redis']              = require __DIR__ . '/config/dependencies/redis.php';
+$files = scandir(DEPENDENCIESDIR);
 
-// Error handlers
-
-$container['notFoundHandler']    = require __DIR__ . '/config/dependencies/error-404.php';
-$container['errorHandler']       = require __DIR__ . '/config/dependencies/error-500.php';
+foreach($files as $file) {
+    if (preg_match('/\.php$/', $file) && is_file(DEPENDENCIESDIR . "/{$file}")) {
+        $dependencieName = str_replace(".php", "", $file);
+        $container[$dependencieName] = require DEPENDENCIESDIR . "/{$file}";
+    }
+}
