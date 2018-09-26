@@ -61,19 +61,33 @@ composer install
 
 ## Run the aplication
 
-### Direct execution
+### Composer execution
+
+#### Build project
 
 ```bash
-php -S 0.0.0.0:8080 -t public index.php
+composer build
 ```
 
-### Composer execution
+#### Start project
 
 ```bash
 composer start
 ```
 
-### Docker compose
+#### Build and run project
+
+```bash
+composer run
+```
+
+#### Run development
+
+```bash
+composer dev
+```
+
+#### Docker compose
 
 ```bash
 docker-compose up
