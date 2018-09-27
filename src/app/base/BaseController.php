@@ -5,6 +5,16 @@ namespace Base;
 use Interop\Container\ContainerInterface;
 use Helpers\ExceptionsHelper;
 
+/**
+ * BaseController
+ *
+ * @category  Base
+ * @package   CorePHP_Slim_Scafold
+ * @author    Eduardo Aguilar <dante.aguilar41@gmail.com>
+ * @copyright 2018 Eduardo Aguilar
+ * @license   https://github.com/danteay/corephp-slim-scafold/LICENSE Apache-2
+ * @link      https://github.com/danteay/corephp-slim-scafold
+ */
 class BaseController
 {
     /**
@@ -46,7 +56,8 @@ class BaseController
 
     /**
      * BaseHandler constructor.
-     * @param ContainerInterface $container
+     *
+     * @param ContainerInterface $container Application Context
      */
     public function __construct(ContainerInterface $container)
     {

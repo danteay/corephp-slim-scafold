@@ -1,33 +1,47 @@
-<?php 
+<?php
+/**
+ * Global CORS middleware
+ *
+ * PHP Version 7.1
+ *
+ * @category  Scafolding
+ * @package   CorePHP_Slim_Scafold
+ * @author    Eduardo Aguilar <dante.aguilar41@gmail.com>
+ * @copyright 2018 Eduardo Aguilar
+ * @license   https://github.com/danteay/corephp-slim-scafold/LICENSE Apache-2
+ * @link      https://github.com/danteay/corephp-slim-scafold
+ */
 
 namespace Middlewares;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
 
+/**
+ * Cors middleware
+ *
+ * @category  Middleware
+ * @package   CorePHP_Slim_Scafold
+ * @author    Eduardo Aguilar <dante.aguilar41@gmail.com>
+ * @copyright 2018 Eduardo Aguilar
+ * @license   https://github.com/danteay/corephp-slim-scafold/LICENSE Apache-2
+ * @link      https://github.com/danteay/corephp-slim-scafold
+ */
 class CorsMiddleware
 {
-    private $logger;
-
     /**
-     * Construct CorsMiddleware
-     * @param mixed $c Application context
+     * Function that will be call for all incomming request and log the relevant
+     * information
+     *
+     * @param Request  $request  The incoming request
+     * @param Response $response The HTTP response
+     * @param callable $next     The next middleware
+     *
+     * @return Response The HTTP response
      */
-    public function __construct($c)
+    public function __invoke(Request $request, Response $response, callable $next)
     {
-        $this->logger = $c->get('logger');
-    }
-
-    /**
-     * Function that will be call for all incomming request and log the relevant information
-     * @param Request $request
-     * @param Response $response
-     * @param callable $next
-     * @return Response
-     */
-    public function __invoke(Request $req, Response $res, $next)
-    {
-        $response = $next($req, $res);
+        $response = $next($request, $response);
         return $response
             ->withHeader('Access-Control-Allow-Origin', '*')
             ->withHeader('Access-Control-Allow-Headers', '*')
