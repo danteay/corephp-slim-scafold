@@ -31,8 +31,7 @@ class Utils
      *
      * @param integer $page  Current page
      * @param integer $pages Number of pages
-     * @param integer $links number of links displayed before and after the active
-     *                       link
+     * @param integer $links links number displayed before and after the active link
      *
      * @return array
      */
