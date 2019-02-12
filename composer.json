@@ -59,12 +59,5 @@
     },
     "config": {
         "process-timeout" : 0
-    },
-    "scripts": {
-        "build": "docker build -t paragon:latest .",
-        "start": "docker run -p 8080:8080 paragon:latest",
-        "run": "composer build && composer start",
-        "dev": "docker-compose up",
-        "test": "phpunit"
     }
 }
