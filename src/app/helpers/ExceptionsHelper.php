@@ -29,13 +29,19 @@ trait ExceptionsHelper
     /**
      * Validate errors and return standard response array
      *
-     * @param \Exception $err Catched exception obect
+     * @param \Exception               $err    Catched exception obect
+     * @param \Psr\Log\LoggerInterface $logger Logger instance to show the errors
      *
      * @return array Standard response
      */
-    public static function processException(\Exception $err)
+    public static function processException(\Exception $err, $logger=null)
     {
         $message = $err->getMessage();
+
+        if (!empty($logger)) {
+            $logger->error($err->getMessage());
+            $logger->error($err->getTraceAsString());
+        }
 
         switch ($err->getCode()) {
             case 404:

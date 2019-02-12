@@ -23,6 +23,10 @@ return function ($c) {
         $args['trace'] = $err->getTraceAsString();
         $args['showTrace'] = $c['settings']['displayErrorDetails'];
 
+        $logger = $c->get('logger');
+        $logger->error($err->getMessage());
+        $logger->error($err->getTraceAsString());
+
         return $view->render($res, 'errors/500.twig', $args);
     };
 };

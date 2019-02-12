@@ -13,9 +13,9 @@
  */
 
 return function ($c) {
-    $database = getenv('DATABASE_URL');
+    $url = getenv('DATABASE_URL');
 
-    if (!empty($database)) {
+    if (!empty($url)) {
         try {
             $options = [
                 'driver' => null,
