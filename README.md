@@ -53,34 +53,6 @@ composer install
 
 ## Run the aplication
 
-### Composer execution
-
-#### Build project
-
-```bash
-composer build
-```
-
-#### Start project
-
-```bash
-composer start
-```
-
-#### Build and run project
-
-```bash
-composer run
-```
-
-#### Run development
-
-```bash
-composer dev
-```
-
-#### Docker compose
-
 ```bash
 docker-compose up
 ```
