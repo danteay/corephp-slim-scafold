@@ -18,17 +18,6 @@ return [
         'addContentLengthHeader' => false,
         'determineRouteBeforeAppMiddleware' => true,
 
-        // Renderer settings
-        'renderer' => [
-            'template_path' => __DIR__ . '/views',
-        ],
-
-        // twig view settings
-        'twig' => [
-            'cache' => __DIR__ . '/views/cache',
-            'auto_reload' => true
-        ],
-
         // Monolog settings
         'logger' => [
             'name' => getenv('APPNAME', 'SLIM'),
