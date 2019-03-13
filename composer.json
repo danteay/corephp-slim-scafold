@@ -27,16 +27,17 @@
     "require": {
         "php": ">=7.1",
         "slim/slim": "^3.1",
-        "illuminate/database": "^5.6",
-        "slim/twig-view": "^2.4",
-        "predis/predis": "^1.1",
-        "monolog/monolog": "^1.23",
-        "mittwald/psr7-validation": "^1.1",
-        "firebase/php-jwt": "^5.0",
-        "swiftmailer/swiftmailer": "^6.1"
+        "monolog/monolog": "^1.23"
     },
     "suggest": {
-        "ramsey/uuid": "^3.8"
+        "ramsey/uuid": "To generate uuid tokens with JWT",
+        "predis/predis": "To get Redis as dependency for cache",
+        "corephp/mailer": "Provides simple implementation of mailing",
+        "mittwald/psr7-validation": "Validate request with JSON schema",
+        "tuupola/slim-jwt-auth": "JWT authentication",
+        "tuupola/cors-middleware": "Easy way to add CORS",
+        "slim/twig-view": "Necesary to add view rendering support",
+        "corephp/slim-eloquent": "Necesary to add database connections with Eloquent"
     },
     "require-dev": {
         "phpunit/phpunit": ">=4.8 < 6.0",

@@ -64,6 +64,8 @@ class IOMiddleware
             'headers' => $request->getHeaders()
         ];
 
+        $data = "REQUEST";
+
         if ($code >= 200 && $code <= 202) {
             $this->logger->info($data, $context);
         } elseif ($code >= 203 && $code<= 400) {

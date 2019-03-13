@@ -14,5 +14,4 @@
 
 // Application middleware
 
-//$app->add(new \Middlewares\CorsMiddleware());
 $app->add(new \Middlewares\IOMiddleware($container));

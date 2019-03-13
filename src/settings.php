@@ -14,13 +14,8 @@
 
 return [
     'settings' => [
-        // set to false in production
-        'displayErrorDetails' => getenv('ERROR_DETAILS') == strtolower('true'),
-
-        // Allow the web server to send the content-length header
+        'displayErrorDetails' => strtolower(getenv('ERROR_DETAILS', 'true')) == 'true',
         'addContentLengthHeader' => false,
-
-        // Allow to access to the rotes before resolve middlewares
         'determineRouteBeforeAppMiddleware' => true,
 
         // Renderer settings
@@ -36,10 +31,12 @@ return [
 
         // Monolog settings
         'logger' => [
-            'name' => getenv('APPNAME'),
+            'name' => getenv('APPNAME', 'SLIM'),
             'level' => Monolog\Logger::DEBUG,
             // 'path' => __DIR__ . '/../logs/logs.log'
             'path' => 'php://stdout'
-        ]
+        ],
+
+        #NEW_SETTINGS
     ]
 ];

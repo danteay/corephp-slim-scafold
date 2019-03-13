@@ -1,4 +1,16 @@
 <?php
+/**
+ * BaseController with the general configurations of the controllers
+ *
+ * PHP Version 7.1
+ *
+ * @category  Controller
+ * @package   CorePHP_Slim_Scafold
+ * @author    Eduardo Aguilar <dante.aguilar41@gmail.com>
+ * @copyright 2018 Eduardo Aguilar
+ * @license   https://github.com/danteay/corephp-slim-scafold/LICENSE Apache-2.0
+ * @link      https://github.com/danteay/corephp-slim-scafold
+ */
 
 namespace Base;
 
@@ -12,11 +24,13 @@ use Helpers\ExceptionsHelper;
  * @package   CorePHP_Slim_Scafold
  * @author    Eduardo Aguilar <dante.aguilar41@gmail.com>
  * @copyright 2018 Eduardo Aguilar
- * @license   https://github.com/danteay/corephp-slim-scafold/LICENSE Apache-2
+ * @license   https://github.com/danteay/corephp-slim-scafold/LICENSE Apache-2.0
  * @link      https://github.com/danteay/corephp-slim-scafold
  */
 class BaseController
 {
+    use ExceptionsHelper;
+
     /**
      * Top level app container instance
      *
@@ -52,8 +66,6 @@ class BaseController
      */
     protected $db;
 
-    use ExceptionsHelper;
-
     /**
      * BaseHandler constructor.
      *
@@ -63,8 +75,6 @@ class BaseController
     {
         $this->container = $container;
         $this->logger = $container->get('logger');
-        $this->redis = $container->get('redis');
-        $this->view = $container->get('renderer');
-        $this->db = $container->get('database');
     }
+    
 }

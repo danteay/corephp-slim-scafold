@@ -15,18 +15,21 @@
 use Slim\Http\Request;
 use Slim\Http\Response;
 
-return function ($c) {
-    return function (Request $req, Response $res, \Exception $err) use ($c) {
-        $view = $c->get('renderer');
-
+return function ($container) {
+    return function (Request $req, Response $res, \Exception $err) use ($container) {
+        $args['status'] = 'error';
         $args['message'] = $err->getMessage();
-        $args['trace'] = $err->getTraceAsString();
-        $args['showTrace'] = $c['settings']['displayErrorDetails'];
+        $args['code'] = 500;
 
-        $logger = $c->get('logger');
+
+        if ($container['settings']['displayErrorDetails']) {
+            $args['trace'] = $err->getTraceAsString();
+        }
+
+        $logger = $container->get('logger');
         $logger->error($err->getMessage());
         $logger->error($err->getTraceAsString());
 
-        return $view->render($res, 'errors/500.twig', $args);
+        return $res->withJson($args, 500);
     };
 };

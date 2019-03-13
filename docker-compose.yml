@@ -8,24 +8,16 @@ services:
     slim:
         container_name: slim-scafold
         restart: always
-        image: danteay/php7-pgsql
+        build:
+            context: .
+            dockerfile: dev.dockerfile
         working_dir: /var/www
         command: php -S 0.0.0.0:8080 -t public
         environment:
             APPNAME: slim-scafold
-            JWTKEY: 3c221bf0-92b3-0136-c9ab-0026b6e97153
             ERROR_DETAILS: 'true'
-            KEYHEADER: X-User-Token
-            USER_EMAIL: user@mail.com
-            PASS_EMAIL: "123456789"
-            # DATABASE_URL: postgres://postgres:1qaz2wsx@postgres:8081/test
-            REDIS_URL: tcp://redis:6379
         ports:
             - 8080:8080
         volumes:
             - .:/var/www
-        links:
-            - "redis:redis"
 
-    redis:
-        image: redis

@@ -12,8 +12,8 @@
  * @link      https://github.com/danteay/corephp-slim-scafold
  */
 
-return function ($c) {
-    $settings = $c->get('settings')['logger'];
+return function ($container) {
+    $settings = $container->get('settings')['logger'];
 
     $logger = new Monolog\Logger(strtoupper($settings['name']));
 

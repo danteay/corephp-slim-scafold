@@ -42,20 +42,6 @@ class PingController extends BaseController
     }
 
     /**
-     * Index endpint /
-     *
-     * @param Request  $req  The incoming request
-     * @param Response $res  The HTTP response
-     * @param array    $args Url rest arguments
-     *
-     * @return Response The HTTP response
-     */
-    public function index(Request $req, Response $res, $args)
-    {
-        return $this->view->render($res, 'index.twig', $args);
-    }
-
-    /**
      * Ping endpint /ping
      *
      * @param Request  $req  The incoming request
@@ -75,8 +61,6 @@ class PingController extends BaseController
             "url" => "/ping",
             "data" => "pong"
         ];
-
-        $this->logger->info('Esto es un mensaje');
 
         return $res->withJson($resp, 200);
     }
