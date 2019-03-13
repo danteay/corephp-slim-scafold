@@ -1,6 +1,6 @@
 # Slim Scafold
 
-This is a Slim preconfigured project to create a MVC project based on the [slim/Slim-Skeleton](https://github.com/slimphp/Slim-Skeleton)
+This is a Slim preconfigured project to create a MVC or API projects based on the [slim/Slim-Skeleton](https://github.com/slimphp/Slim-Skeleton)
 repository from [Slim Framework](https://www.slimframework.com/).
 
 ## Requirements
