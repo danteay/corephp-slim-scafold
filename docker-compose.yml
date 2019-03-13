@@ -6,7 +6,7 @@ volumes:
 
 services:
     slim:
-        container_name: slim-scafold
+        container_name: slim
         restart: always
         build:
             context: .
@@ -14,7 +14,7 @@ services:
         working_dir: /var/www
         command: php -S 0.0.0.0:8080 -t public
         environment:
-            APPNAME: slim-scafold
+            APPNAME: SLIM
             ERROR_DETAILS: 'true'
         ports:
             - 8080:8080

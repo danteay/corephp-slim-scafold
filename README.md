@@ -16,14 +16,7 @@ repository from [Slim Framework](https://www.slimframework.com/).
 ## Dependendies
 
 * [Slim Framework](https://www.slimframework.com/)
-* [Twig](https://twig.symfony.com/)
-* [Slim Twig-View](https://www.slimframework.com/docs/v3/features/templates.html#the-slimtwig-view-component)
 * [Monolog](https://packagist.org/packages/monolog/monolog)
-* [Predis (redis client)](https://packagist.org/packages/predis/predis)
-* [Eloquent ORM](https://laravel.com/docs/5.7/eloquent)
-* [JSON Schema](https://packagist.org/packages/mittwald/psr7-validation)
-* [JWT](https://packagist.org/packages/firebase/php-jwt)
-* [Swiftmailer](https://swiftmailer.symfony.com/)
 
 ## Container specifications
 
@@ -38,7 +31,6 @@ repository from [Slim Framework](https://www.slimframework.com/).
 | Middlewares | src/app/middlewares |
 | Libraries   | src/app/libraries   |
 | Helpers     | src/app/helpers     |
-| Base        | src/app/base        |
 
 ## Install the Application
 

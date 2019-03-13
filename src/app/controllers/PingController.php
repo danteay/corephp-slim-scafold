@@ -16,8 +16,6 @@ namespace Controllers;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
-use Base\BaseController;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * PingController
@@ -29,7 +27,7 @@ use Illuminate\Database\Eloquent\Model;
  * @license   https://github.com/danteay/corephp-slim-scafold/LICENSE Apache-2
  * @link      https://github.com/danteay/corephp-slim-scafold
  */
-class PingController extends BaseController
+class PingController extends Controller
 {
     /**
      * PingController Constrcut

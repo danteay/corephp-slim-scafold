@@ -7,8 +7,11 @@ FROM webdevops/php-nginx:7.2
 ENV SRC /app
 ENV PORT 8080
 
-RUN apt-install libpq-dev
-RUN docker-php-ext-install opcache pdo pdo_pgsql pgsql
+RUN apt-get update && apt-get install -y mysql-client libmagickwand-dev libpq-dev --no-install-recommends
+RUN pecl install imagick
+RUN docker-php-ext-enable imagick
+RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install pgsql pdo_pgsql
 
 ###################################################################
 # Environment variables of the proyect
@@ -16,14 +19,6 @@ RUN docker-php-ext-install opcache pdo pdo_pgsql pgsql
 
 ENV APPNAME "slim-scafold"
 ENV ERROR_DETAILS "true"
-
-# A valid URL format of your database
-#
-# ENV DATABASE_URL postgres://localhost:5432/postgres
-
-# Change for a valid Redis URL
-#
-# ENV REDIS_URL redis://pass@host:port/index
 
 ###################################################################
 # Configuring Nginx
