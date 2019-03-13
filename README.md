@@ -34,10 +34,10 @@ repository from [Slim Framework](https://www.slimframework.com/).
 
 ## Install the Application
 
-Run this command from the directory in which you want to install your application.
+Yu can install it from the [slimcmd](https://packagist.org/packages/corephp/slim-cmd) tool with this command:
 
 ```bash
-php composer create-project corephp/slim-scafold [app-name]
+slimcmd app:init [app-name]
 ```
 
 Replace `[app-name]` with the desired directory name for your new application. You'll want to:
