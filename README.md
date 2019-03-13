@@ -20,7 +20,7 @@ repository from [Slim Framework](https://www.slimframework.com/).
 
 ## Container specifications
 
-* Image: [webdevops/php-nginx:7.2](https://hub.docker.com/r/webdevops/php-nginx/)
+* Image: [webdevops/php-nginx:7.3](https://hub.docker.com/r/webdevops/php-nginx/)
 
 ## Namespaces
 
